@@ -132,6 +132,10 @@ li {
             font-family: var(--fontG);
             font-size: 4vw;
             color: #0c143d;
+
+            @media (max-width: 800px) {
+                font-size: 30px;
+            }
         }
     }
 
@@ -146,7 +150,7 @@ li {
                 margin: 2px;
 
                 a {
-                    font-family: var(--fontG);
+                    font-family: var(--fontN);
                     border: 1px solid #0c143d;
                     padding: 10px 20px;
                     display: inline-block;
