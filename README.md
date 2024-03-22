@@ -1,7 +1,8 @@
 # 오늘의 수업
 [메인 페이지](https://rkdrudals0611.github.io/class-2024/)   
 [자바스크립트](https://rkdrudals0611.github.io/class-2024/javascript/index.html)   
-[MYSQL](https://rkdrudals0611.github.io/class-2024/mysql/index.html)   
+[MYSQL](https://rkdrudals0611.github.io/class-2024/mysql/index.html) 
+[Quiz](https://rkdrudals0611.github.io/class-2024/quiz/index.html)
 # vscode 확장 프로그램
 Live Server : 웹페이지 미리보기   
 Material Icon : 아이콘 설정   
