@@ -82,7 +82,7 @@ body {
     background-position: center center;
     background-repeat: no-repeat;
     position: relative;
-    background-image: url(bg01.jpg);
+    background-image: url('../img/bg01.jpg');
     width: 100%;
     height: 100vh;
 }

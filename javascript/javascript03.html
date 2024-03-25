@@ -92,6 +92,272 @@
                 </div>
             </div>
             <!-- //sample01 -->
+            <div id="sample02" class="sample">
+                <h3>02. 함수 : 익명 함수</h3>
+                <p>
+                    익명 함수는 이름이 없는 함수로, 주로 다른 함수의 인자로 전달되거나 필요한 곳에 인라인으로 작성됩니다.
+                </p>
+                <pre><code>{
+        const func = function () {
+            console.log("02. 함수가 실행되었습니다.")
+
+        }
+        func();
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            02. 함수가 실행되었습니다.
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample02 -->
+            <div id="sample03" class="sample">
+                <h3>03. 함수 : 매개변수 함수</h3>
+                <p>
+                    매개변수 함수(Parameter function)는 다른 함수에 인자로 전달되는 함수를 가리킵니다. 이러한 함수는 다른 함수 내에서 호출되거나 다른 작업을 수행하는 데 사용됩니다.
+                    종종 콜백 함수나 고차 함수의 형태로 사용됩니다.
+                </p>
+                <pre><code>{
+    // 선언적 함수
+    function func(str) {
+        console.log(str);
+    }
+    func("03. 함수가 실행되었습니다.");
+
+    // 익명 함수
+    const func1 = function (str) {
+        console.log(str);
+    }
+    func1("03. 함수가 실행되었습니다.");
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            03. 함수가 실행되었습니다.
+                            03. 함수가 실행되었습니다.
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample03 -->
+            <div id="sample04" class="sample">
+                <h3>04. 함수 : 리턴값 함수</h3>
+                <p>
+                    리턴값 함수는 입력값을 받아들여 작업을 수행한 후 결과를 반환하는 함수를 의미합니다. 함수가 실행된 후 반환되는 값은 변수에 할당되거나 다른 연산에 사용될 수 있습니다.
+                </p>
+                <pre><code>{
+    // 선언적 함수
+    function func() {
+        return "04. 함수가 실행되었습니다."
+    }
+    console.log(func());
+
+    // 익명 함수
+    const func1 = function () {
+        return "04. 함수가 실행되었습니다."
+    }
+    console.log(func1());
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            04. 함수가 실행되었습니다.
+                            04. 함수가 실행되었습니다.
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample04 -->
+            <div id="sample05" class="sample">
+                <h3>05. 함수 : 매개변수 + 리턴값 함수</h3>
+                <p>
+                    매개변수와 리턴값을 모두 가지는 함수는 입력값을 받아들여 작업을 수행한 후 결과를 반환하는 함수를 말합니다.
+                </p>
+                <pre><code>{
+    // 선언적 함수
+    function func(str) {
+        return str;
+    }
+    console.log(func("05. 함수가 실행되었습니다."));
+
+    // 익명함수
+    const func1 = function (str) {
+        return str;
+    }
+    console.log(func1("05. 함수가 실행되었습니다."));
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            05. 함수가 실행되었습니다.
+                            05. 함수가 실행되었습니다.
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample05 -->
+            <div id="sample06" class="sample">
+                <h3>06 .화살표 함수 : 선언적 함수</h3>
+                <p>
+                    화살표 함수(arrow function)는 JavaScript에서 사용되는 함수의 한 형태로, 보통 익명 함수로 사용됩니다.
+                </p>
+                <pre><code>{
+    // 선언적 함수
+    function func() {
+        console.log("06. 함수가 실행되었습니다.");
+    }
+    func();
+    // 익명함수
+    func = () => {
+        console.log("06. 함수가 실행되었습니다.");
+    }
+    func();
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            06. 함수가 실행되었습니다.
+                            06. 함수가 실행되었습니다.
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample06 -->
+            <div id="sample07" class="sample">
+                <h3>07. 화살표 함수 : 익명 함수</h3>
+                <p>
+                    화살표 함수(arrow function)는 JavaScript에서 사용되는 함수의 한 형태로, 보통 익명 함수로 사용됩니다.
+                </p>
+                <pre><code>{
+    // 익명 함수
+    const func = function () {
+        console.log("07. 함수가 실행되었습니다.")
+    };
+    func();
+
+    // 익명 함수 --> 화살표 함수
+    const func1 = () => {
+        console.log("07. 함수가 실행되었습니다.")
+    };
+    func1();
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            07. 함수가 실행되었습니다.
+                            07. 함수가 실행되었습니다.
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample07 -->
+            <div id="sample08" class="sample">
+                <h3>08. 화살표 함수 : 매개변수 함수</h3>
+                <p>
+                    화살표 함수(arrow function)는 매개변수를 받는 함수를 정의하는 JavaScript의 문법입니다. 기존의 함수 선언 방식보다 간결하게 함수를 작성할 수 있으며, 주로
+                    익명 함수로 사용됩니다.
+                </p>
+                <pre><code>{
+    // 선언적 함수
+    func = (str) => {
+        console.log(str);
+    }
+    func("08. 함수가 실행되었습니다.");
+
+    // 익명 함수
+    const func1 = (str) => {
+        console.log(str);
+    }
+    func1("08. 함수가 실행되었습니다.");
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            08. 함수가 실행되었습니다.
+                            08. 함수가 실행되었습니다.
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample08 -->
+            <div id="sample09" class="sample">
+                <h3>09. 화살표 함수 : 리턴값(결과, 종료)</h3>
+                <p>
+                    화살표 함수(arrow function)는 일반적인 함수와 마찬가지로 리턴값을 반환할 수 있습니다. 화살표 함수에서는 함수 내부의 작업이 한 줄인 경우 중괄호 {}와 return
+                    키워드를 생략할 수 있습니다. 이 때는 해당 줄의 결과가 자동으로 리턴값으로 처리됩니다.
+                </p>
+                <pre><code>{
+    // 선언적 함수
+    func = () => {
+        return "09. 함수가 실행되었습니다.";
+    }
+    console.log(func());
+
+    // 익명 함수
+    const func1 = () => {
+        return "09. 함수가 실행되었습니다.";
+    }
+    console.log(func1());
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            09. 함수가 실행되었습니다.
+                            09. 함수가 실행되었습니다.
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample09 -->
+            <div id="sample10" class="sample">
+                <h3>10. 화살표 함수 : 매개변수 + 리턴값</h3>
+                <p>
+                    화살표 함수(arrow function)는 매개변수와 리턴값을 동시에 정의할 수 있습니다. 이러한 함수는 보통 익명 함수로 사용되며, 간결한 문법으로 함수를 표현할 수 있습니다
+                </p>
+                <pre><code>{
+    // 익명 함수(화살표 함수) + 매개변수 + 리턴값
+    const func1 = (str) => {
+        return str;
+    }
+    console.log(func1("10. 함수가 실행되었습니다."));
+
+    // 매개변수 하나이면 괄호 생략 가능
+    const func2 = str => {
+        return str;
+    }
+    console.log(func2("10. 함수가 실행되었습니다."));
+
+    // 리턴 생략
+    const func3 = str => str;
+    console.log(func3("10. 함수가 실행되었습니다."));
+
+    // 선언적 함수(가독성X)
+    func4 = str => str;
+    console.log(func4("10. 함수가 실행되었습니다."))
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            10. 함수가 실행되었습니다.
+                            10. 함수가 실행되었습니다.
+                            10. 함수가 실행되었습니다.
+                            10. 함수가 실행되었습니다.
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample10 -->
         </div>
         <!-- //main__sample -->
     </main>
@@ -169,12 +435,13 @@
 
         // 06 .화살표 함수 : 선언적 함수
         {
+
             // 선언적 함수
             function func() {
                 console.log("06. 함수가 실행되었습니다.");
             }
             func();
-
+            // 익명함수
             func = () => {
                 console.log("06. 함수가 실행되었습니다.");
             }

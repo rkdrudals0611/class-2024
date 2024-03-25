@@ -39,12 +39,12 @@
         // 04 함수 : 리턴값 함수(선언적/익명)
         {
             function func() {
-                return "d"
+                return "ㅁ"
             }
             console.log(func());
 
             const func1 = function () {
-                return "d"
+                return "ㄷ"
             }
             console.log(func1());
         }
@@ -59,6 +59,46 @@
                 return (str)
             }
             console.log(func1("aa"));
+        }
+        // 06 .화살표 함수 : 선언적 함수
+        {
+            function func() {
+                console.log("dada");
+            }
+            func()
+            func1 = () => {
+                console.log("dada");
+            }
+            func1()
+        }
+        // 07. 화살표 함수 : 익명 함수
+        {
+            const func = () => {
+                console.log("aas")
+            }
+            func()
+        }
+        // 08. 화살표 함수 : 매개변수 함수
+        {
+            func = (str) => {
+                console.log(str)
+            }
+            func("das")
+
+        }
+        // 09. 화살표 함수 : 리턴값(결과, 종료)
+        {
+            func = () => {
+                return "asa"
+            }
+            console.log(func())
+        }
+        // 10. 화살표 함수 : 매개변수 + 리턴값
+        {
+            func = (str) => {
+                return str
+            }
+            console.log(func("asss"))
         }
     </script>
 </body>
