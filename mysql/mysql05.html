@@ -22,6 +22,8 @@
                 <li><a href="mysql03.html">데이터베이스</a></li>
                 <li><a href="mysql04.html">테이블</a></li>
                 <li class="active"><a href="mysql05.html">SELECT</a></li>
+                <li><a href="mysql06.html">ALTER</a></li>
+
             </ul>
         </nav>
     </header>
@@ -211,7 +213,7 @@
                 <div class="info">
                     SELECT * FROM members WHERE memberID=1;
                 </div>
-                <pre><code class="language-js">mysql> SELECT * FROM members3 WHERE memberID=1;
+                <pre><code class="language-js">mysql> SELECT * FROM members WHERE memberID=1;
 +----------+---------+---------+--------+----------+------------+
 | memberID | youName | youPass | youAge | youBirth | regTime    |
 +----------+---------+---------+--------+----------+------------+
@@ -221,9 +223,9 @@
 
                 <h4>memberID가 10보다 큰 데이터</h4>
                 <div class="info">
-                    SELECT * FROM members3 WHERE memberID>10;
+                    SELECT * FROM members WHERE memberID>10;
                 </div>
-                <pre><code class="language-js">mysql> SELECT * FROM members3 WHERE memberID>10;
+                <pre><code class="language-js">mysql> SELECT * FROM members WHERE memberID>10;
 +----------+---------+---------+--------+----------+------------+
 | memberID | youName | youPass | youAge | youBirth | regTime    |
 +----------+---------+---------+--------+----------+------------+
@@ -236,8 +238,8 @@
 5 rows in set (0.00 sec)</code></pre>
                 <h4>memberID가 5보다 크고 10보다 작은 데이터</h4>
                 <div class="info">
-                    SELECT * FROM members3 WHERE memberID &gt; 5 AND memberID &lt; 10; </div>
-                <pre><code class="language-js">mysql> SELECT * FROM members3 WHERE memberID > 5 AND memberID < 10;
+                    SELECT * FROM members WHERE memberID &gt; 5 AND memberID &lt; 10; </div>
+                <pre><code class="language-js">mysql> SELECT * FROM members WHERE memberID > 5 AND memberID < 10;
 +----------+-----------+---------+--------+----------+------------+
 | memberID | youName   | youPass | youAge | youBirth | regTime    |
 +----------+-----------+---------+--------+----------+------------+
@@ -250,8 +252,8 @@
 
                 <h4>memberID가 1, 5, 10 데이터(IN)</h4>
                 <div class="info">
-                    SELECT * FROM members3 WHERE memberID in(1,5,10); </div>
-                <pre><code class="language-js">mysql> SELECT * FROM members3 WHERE memberID in(1,5,10);
+                    SELECT * FROM members WHERE memberID in(1,5,10); </div>
+                <pre><code class="language-js">mysql> SELECT * FROM members WHERE memberID in(1,5,10);
 +----------+---------+---------+--------+----------+------------+
 | memberID | youName | youPass | youAge | youBirth | regTime    |
 +----------+---------+---------+--------+----------+------------+
