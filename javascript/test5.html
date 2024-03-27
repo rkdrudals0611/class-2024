@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dd</title>
+</head>
+
+<body>
+    <script>
+        // 1. 선언적함수
+        {
+            function test() {
+                console.log("asad")
+            }
+        }
+        test();
+        // 2. 익명함수
+
+        const test1 = function () {
+            console.log("first");
+        }
+
+        test1();
+        // 3. 매개변수 함수
+        function test2(str) {
+            console.log(str);
+        }
+        test2("sdsa");
+        // 4. 리턴값함수
+        function test3() {
+            return "asa";
+        }
+        console.log(test3());
+        // 5. 매개+리턴
+        function test4(str) {
+            return str;
+        }
+        console.log(test4("asmd"));
+        // 6. 화살표 선언적함수
+        // 7. 화살표 익명함수
+        // 8. 화살표 매개변수 함수
+        // 9. 화살표 리턴값함수
+        // 10. 화살표 매개+리턴
+        // 11. for()
+        {
+            const arr = [100, 200, 300, 400, 500];
+            for (let test = 0; test < arr.length; test++) {
+                console.log(arr[test]);
+            }
+        }
+        // 12. forEach
+        {
+            const arr = [100, 200, 300, 400, 500];
+            arr.forEach(function (Element) {
+                console.log(Element);
+            })
+        }
+        // 13. for of
+        {
+            const arr = [100, 200, 300, 400, 500];
+            for (let Element of arr) {
+                console.log(Element);
+            }
+        }
+        // 14. for in
+        {
+            const arr = [100, 200, 300, 400, 500];
+            for (let Element in arr) {
+                console.log(arr[Element]);
+            }
+        }
+        // 15. map()
+        {
+            const arr = [100, 200, 300, 400, 500];
+            arr.map(function (Element) {
+                console.log(Element);
+            })
+        }
+    </script>
+</body>
+
+</html>
