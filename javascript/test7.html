@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 01. 선언적 함수(화살표)
+        test = () => {
+            console.log("first")
+        }
+        test();
+        // 02. 익명 함수(화살표)
+        const test2 = () => {
+            console.log("dssd")
+        }
+        test2();
+        // 03. 매게변수 함수(화살표)
+        test3 = (str) => {
+            console.log(str)
+        }
+        test3("aasa");
+        // 04. 리턴값 함수(화살표)
+        test4 = () => {
+            return "dfsa"
+        }
+        console.log(test4());
+        // 05. 매개변수 + 리턴값 함수(화살표)
+        test5 = (str) => {
+            return str
+        }
+        console.log(test5("saasas"));
+        // 06. for문(1부터 20까지 출력)
+        {
+            const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+            for (let test = 0; test < arr.length; test++) {
+                console.log(arr[test]);
+            }
+        }
+        // 07. for문(let num = [1,2,3,4,5,6,7,8])출력
+        {
+            let num = [1, 2, 3, 4, 5, 6, 7, 8]
+            for (let test = 0; test < num.length; test++) {
+                console.log(num[test]);
+            }
+        }
+        // 08. forEach()(let num = [1,2,3,4,5,6,7,8])출력
+        {
+            let num = [1, 2, 3, 4, 5, 6, 7, 8]
+            num.forEach(function (e) {
+                console.log(e);
+            })
+        }
+        // 09. for in(let num = [1,2,3,4,5,6,7,8])출력
+        {
+            let num = [1, 2, 3, 4, 5, 6, 7, 8]
+            for (let e in num) {
+                console.log(num[e]);
+            }
+        }
+        // 10. for of(let num = [1,2,3,4,5,6,7,8])출력
+        {
+            let num = [1, 2, 3, 4, 5, 6, 7, 8]
+            for (let e of num) {
+                console.log(e);
+            }
+        }
+        // 11. map(let num = [1,2,3,4,5,6,7,8])출력
+        {
+            let num = [1, 2, 3, 4, 5, 6, 7, 8]
+            num.map(function (e) {
+                console.log(e);
+            })
+        }
+        // 12. filter(let num = [1,2,3,4,5,6,7,8])출력 
+        {
+            let num = [1, 2, 3, 4, 5, 6, 7, 8]
+            num.filter(function (e) {
+                console.log(e);
+            })
+        }
+    </script>
+</body>
+
+</html>
