@@ -37,8 +37,7 @@
                     <div class="info">
                         create table 이름;
                     </div>
-                    <pre><code class="language-js">
-create table members(
+                    <pre><code class="language-js">create table members(
     memberID int(10) unsigned auto_increment,
     youName varchar(10) NOT NULL,
     youPass varchar(10) NOT NULL,
@@ -46,15 +45,14 @@ create table members(
     youBirth int(5) NOT NULL,
     regTime int(30) NOT NULL,
     PRIMARY KEY(memberID)                   
-)charset=utf8;
-                    </code></pre>
-
-                    <div id="sample02" class="sample">
-                        <h3>테이블 구조 보기</h3>
-                        <div class="info">
-                            desc 이름;
-                        </div>
-                        <pre><code class="language-js"> mysql> desc member2;
+)charset=utf8;</code></pre>
+                </div>
+                <div id="sample02" class="sample">
+                    <h3>테이블 구조 보기</h3>
+                    <div class="info">
+                        desc 이름;
+                    </div>
+                    <pre><code class="language-js"> mysql> desc member2;
 +----------+------------------+------+-----+---------+----------------+
 | Field    | Type             | Null | Key | Default | Extra          |
 +----------+------------------+------+-----+---------+----------------+
@@ -63,16 +61,15 @@ create table members(
 | youPass  | varchar(10)      | NO   |     | NULL    |                |
 | youAge   | int(5)           | NO   |     | NULL    |                |
 +----------+------------------+------+-----+---------+----------------+
-4 rows in set (0.00 sec)
-                        </code></pre>
+4 rows in set (0.00 sec)</code></pre>
 
+                </div>
+                <div id="sample03" class="sample">
+                    <h3>테이블 데이터 입력</h3>
+                    <div class="info">
+                        INSERT INTO 테이블 이름(필드명) VALUES(값);
                     </div>
-                    <div id="sample03" class="sample">
-                        <h3>테이블 데이터 입력</h3>
-                        <div class="info">
-                            INSERT INTO 테이블 이름(필드명) VALUES(값);
-                        </div>
-                        <pre><code class="language-js">INSERT INTO members(youName, youPass, youAge, youBirth, regTime) VALUES("황상연", "1234", "33", "990304", "1023958375");
+                    <pre><code class="language-js">INSERT INTO members(youName, youPass, youAge, youBirth, regTime) VALUES("황상연", "1234", "33", "990304", "1023958375");
 INSERT INTO members(youName, youPass, youAge, youBirth, regTime) VALUES("남윤서", "1234", "19", "060121", "1023958375");
 INSERT INTO members(youName, youPass, youAge, youBirth, regTime) VALUES("김진우", "1234", "21", "040416", "1231231233");
 INSERT INTO members(youName, youPass, youAge, youBirth, regTime) VALUES("최선화", "1234", "26", "990123", "1104781152");
@@ -88,33 +85,29 @@ INSERT INTO members(youName, youPass, youAge, youBirth, regTime) VALUES("강경�
 INSERT INTO members(youName, youPass, youAge, youBirth, regTime) VALUES("안지은", "1234", "33", "840816", "1023958375");
 INSERT INTO members(youName, youPass, youAge, youBirth, regTime) VALUES("박진아", "1232", "33", "990304", "1023958375");
 </code></pre>
+                </div>
+                <div id="sample04" class="sample">
+                    <h3>테이블 삭제</h3>
+                    <div class="info">
+                        drop table 이름
                     </div>
-
-                    <div id="sample04" class="sample">
-                        <h3>테이블 삭제</h3>
-                        <div class="info">
-                            drop table 이름
-                        </div>
-                        <pre><code class="language-js">mysql> drop table members;
-                            Query OK, 0 rows affected (0.01 sec)
-</code></pre>
+                    <pre><code class="language-js">mysql> drop table members;
+Query OK, 0 rows affected (0.01 sec)</code></pre>
+                </div>
+                <div id="sample05" class="sample">
+                    <h3>테이블 초기화</h3>
+                    <div class="info">
+                        truncate table 이름
                     </div>
-
-                    <div id="sample05" class="sample">
-                        <h3>테이블 초기화</h3>
-                        <div class="info">
-                            truncate table 이름
-                        </div>
-                        <pre><code class="language-js">mysql> truncate table members;
-                            Query OK, 0 rows affected (0.02 sec)
-</code></pre>
-                    </div>
+                    <pre><code class="language-js">mysql> truncate table members;
+Query OK, 0 rows affected (0.02 sec)</code></pre>
+                </div>
+                <div id="sample06" class="sample">
                     <h3>테이블 합치기(JOIN)</h3>
                     <div class="info">
                         SLEECT [필드명] FROM [테이블.앨리어스] JOIN [테이블.앨리어스] ON [기준이 되는 조건문]
                     </div>
-                    <pre><code class="language-js">SELECT m.youName, m.youAge, r.youText, r. regTime FROM members m JOIN reviews r ON (m.memberID=r.memberID);
-mysql> SELECT m.youName, m.youAge, r.youText, r. regTime FROM members m JOIN reviews r ON (m.memberID=r.memberID);
+                    <pre><code class="language-js">mysql> SELECT m.youName, m.youAge, r.youText, r. regTime FROM members m JOIN reviews r ON (m.memberID=r.memberID);
 +---------+--------+---------------------------------------+------------+
 | youName | youAge | youText                               | regTime    |
 +---------+--------+---------------------------------------+------------+
@@ -129,25 +122,23 @@ mysql> SELECT m.youName, m.youAge, r.youText, r. regTime FROM members m JOIN rev
 | 김현민  |     32 | 소중한 피드백 감사합니다.             | 1023958375 |
 | 황상연  |     33 | 대단히 만족스러웠습니다.              | 1023958375 |
 +---------+--------+---------------------------------------+------------+
-10 rows in set (0.00 sec)
-                    </code></pre>
-                    <pre><code class="language-js">
-create table members(
-    memberID int(10) unsigned auto_increment,
-    youName varchar(10) NOT NULL,
-    youPass varchar(10) NOT NULL,
-    youAge int(5) NOT NULL,
-    youBirth int(5) NOT NULL,
-    regTime int(30) NOT NULL,
-    PRIMARY KEY(memberID)
+10 rows in set (0.00 sec)</code></pre>
+                    <pre><code class="language-js">create table members(
+memberID int(10) unsigned auto_increment,
+youName varchar(10) NOT NULL,
+youPass varchar(10) NOT NULL,
+youAge int(5) NOT NULL,
+youBirth int(5) NOT NULL,
+regTime int(30) NOT NULL,
+PRIMARY KEY(memberID)
 ) charset=utf8;
 
 create table reviews(
-    reviewID int(10) unsigned auto_increment,
-    memberID int(10) unsigned,
-    youText tinytext NOT NULL,
-    regTime int(30) NOT NULL,
-    PRIMARY KEY(reviewID)
+reviewID int(10) unsigned auto_increment,
+memberID int(10) unsigned,
+youText tinytext NOT NULL,
+regTime int(30) NOT NULL,
+PRIMARY KEY(reviewID)
 ) charset=utf8;
 
 INSERT INTO members(youName, youPass, youAge, youBirth, regTime) VALUES("황상연", "1234", "33", "990304", "1023958375");
@@ -177,6 +168,7 @@ INSERT INTO reviews(memberID, youText, regTime) VALUES("3", "이용해 주셔서
 INSERT INTO reviews(memberID, youText, regTime) VALUES("6", "소중한 피드백 감사합니다.", "1023958375");
 INSERT INTO reviews(memberID, youText, regTime) VALUES("1", "대단히 만족스러웠습니다.", "1023958375");</code></pre>
                 </div>
+
     </main>
     <!-- //main -->
     <footer id="footer">
