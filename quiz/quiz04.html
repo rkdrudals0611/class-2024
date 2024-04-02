@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>퀴즈 03</title>
+    <title>퀴즈 04</title>
     <link rel="stylesheet" href="./assets/css/quiz.css">
 </head>
 
@@ -91,7 +91,7 @@
             desc: "명령어를 가지고 오는것을 fetch cycle 이라고 합니다."
         }, {
             date: "2011년 3회",
-            type: "정보처리기능사",
+            type: "정보처리 기능사",
             question: "프로세스들이 서로 다른 프로세스가 차지하고 있는 자원을 무한정 기다려 시스템이 멈춘 것처럼 보이는 상태를 무엇이라고 하는가?",
             choices: {
                 1: "세마포어",
@@ -104,7 +104,7 @@
         },
         {
             date: "2011년 3회",
-            type: "정보처리기능사",
+            type: "정보처리 기능사",
             question: "실행중인 프로그램이나 시스템을 중지시킬 수 있는 수행중단기능(break on)을 설정할 수 있는 도스 파일은?",
             choices: {
                 1: "IO.SYS",
@@ -119,52 +119,79 @@
         // 문제 출력
         const updateQuiz = () => {
             const quizArray = [];
+
             quizInfo.forEach((quiz, index) => {
                 quizArray.push(`
-                <div class="quiz">
-                <div class="quiz__header">
-                ${quiz.date} ${quiz.type}
-                </div>
-                <div class="quiz__main">
-                    <div class="question">
-                        ${index + 1}. ${quiz.question}
-                    </div>
-                    <div class="choices">
-                        <label for="choice1">
-                            
-                            <input type="radio" id="choice-${index}" name="choice" value="1">
-                            <span>${quiz.choices[1]}</span>
-                        </label>
-                        <label for="choice2">
-                            <input type="radio" id="choice-${index}" name="choice" value="2">
-                            <span>
-                                ${quiz.choices[2]}</span>
-                        </label>
-                        <label for="choice3">
-                            <input type="radio" id="choice-${index}" name="choice" value="3">
-                            <span>${quiz.choices[3]}</span>
-                        </label>
-                        <label for="choice4">
-                            <input type="radio" id="choice-${index}" name="choice" value="4">
-                            <span>${quiz.choices[4]}</span>
-                        </label>
-                    </div>
-                    <div class="answer">${quiz.answer}
+                    <div class="quiz">
+                        <div class="quiz__header">${quiz.date} ${quiz.type}</div>
+                        <div class="quiz__main">
+                            <div class="question">${index + 1}. ${quiz.question}</div>
+                            <div class="choices">
+                                <label for="choice${index}-1">
+                                    <input type="radio" id="choice${index}-1" name="choice-${index}" value="1">
+                                    <span>${quiz.choices[1]}</span>
+                                </label>
+                                <label for="choice${index}-2">
+                                    <input type="radio" id="choice${index}-2" name="choice-${index}" value="2">
+                                    <span>${quiz.choices[2]}</span>
+                                </label>
+                                <label for="choice${index}-3">
+                                    <input type="radio" id="choice${index}-3" name="choice-${index}" value="3">
+                                    <span>${quiz.choices[3]}</span>
+                                </label>
+                                <label for="choice${index}-4">
+                                    <input type="radio" id="choice${index}-4" name="choice-${index}" value="4">
+                                    <span>${quiz.choices[4]}</span>
+                                </label>
+                            </div>
+                            <div class="answer none">${quiz.answer}</div>
+                            <div class="desc none">${quiz.desc}</div>
                         </div>
-                    <div class="desc">${quiz.desc}</div>
-                </div>
-                <div class="quiz__footer">
-                    <button class="confirm">정답 확인하기</button>
-                </div>
-            </div>
+                        <div class="quiz__footer">
+                            <button class="confirm">정답 확인하기</button>
+                        </div>
+                    </div>
                 `)
 
                 quizWrap.innerHTML = quizArray.join("");
             });
-
-            console.log(quizArray);
         }
-        updateQuiz();
+
+        // 정답 확인
+        const answerQuiz = (index) => {
+            const quizChecked = quizWrap.querySelectorAll(`.quiz__main .choices input[name="choice-${index}"]:checked`);
+            const quizElement = quizWrap.querySelectorAll(".quiz")[index];
+            const answerElement = quizWrap.querySelectorAll(".answer")[index];
+            const descElement = quizWrap.querySelectorAll(".desc")[index];
+            const confirmElement = quizWrap.querySelectorAll(".confirm")[index];
+
+            if (quizChecked.length > 0) {     // 사용자가 체크한것
+                const userAnswer = quizChecked[0].value;
+                if (userAnswer === quizInfo[index].answer) {
+                    quizElement.classList.add("good");  // O 표시
+                } else {
+                    quizElement.classList.add("bad");   // X 표시
+                    answerElement.classList.remove("none");  // 정답 보기
+                }
+                descElement.classList.remove("none"); // 해설 보기
+                confirmElement.style.disply = "none";  // 정답 확인 숨기기
+            } else {
+                alert("보기를 선택해주세요!! 😎");
+            }
+        }
+
+        // 페이지가 로드된 후 실행
+        document.addEventListener("DOMContentLoaded", () => {
+            // 문제 출력
+            updateQuiz();
+
+            // 정답 확인
+            quizWrap.querySelectorAll(".confirm").forEach((button, index) => {
+                button.addEventListener("click", () => {
+                    answerQuiz(index);
+                })
+            })
+        })
     </script>
 </body>
 
