@@ -696,6 +696,42 @@
                 </div>
             </div>
             <!-- //sample21 -->
+
+            <div id="sample22" class="sample">
+                <h3>22. 함수 유형: 재귀 함수</h3>
+                <p>
+                    다른 함수에 인자(argument)로 전달되는 함수를 가리킵니다. JavaScript에서 함수는 다른 함수의 인자로서 전달될 수 있으며, 이는 함수형 프로그래밍(Functional
+                    Programming)에서 매우 중요한 개념 중 하나입니다.
+                </p>
+                <pre><code>{
+    // 01 반복문을 사용하는 경우
+    function func(num) {
+        for (let i = 0; i < num; i++) {
+            console.log("19. 실행되었습니다.");
+        }
+    }
+    func(10);
+
+    // 02 재귀함수를 사용하기
+    function func1(num) {
+        if (num < 1) return;
+
+        console.log("20. 실행되었습니다.")
+        func1(num - 1);  // 재귀 호출
+    }
+    func(10);
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            17. 함수가 실행되었습니다.
+                            18. 함수가 실행되었습니다.
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample22 -->
         </div>
         <!-- //main__sample -->
     </main>
