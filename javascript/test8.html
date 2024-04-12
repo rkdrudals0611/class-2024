@@ -9,17 +9,12 @@
 
 <body>
     <script>
-        {
-            const obj = {
-                a: 100,
-                b: 200,
-                c: "javascript"
-            }
-            console.log(Object.keys(obj));
-            console.log(Object.values(obj));
-            console.log(Object.entries(obj));
-        }
+        const arr = [100, 200, "javascript"];
+        const copy = [...arr];
 
+        console.log(arr) // [100,200,"javascript"]
+        console.log(...arr) // 100,200,"javascript"
+        console.log(copy) // [100,200,"javascript"]
 
 
     </script>
